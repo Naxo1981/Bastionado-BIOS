@@ -1,0 +1,180 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Bastionado de Bios</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="Bastionado-BIOS"
+                  title="Bastionado de Bios"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Introducción" duration="4">
+        <h2 is-upgraded>¿Que es una BIOS/UEFI?</h2>
+<p>La <strong>BIOS</strong> (Basic Input Ouput System) o sistema básico de entrada y salida,<br>es un código insertado en un chip de memoria no volátil en las placas base,<br>y que es lo primero que se ejecuta cuando encendemos un ordenador.</p>
+<aside class="warning"><p>Actualmente los equipos han reemplazado la BIOS por <strong>UEFI</strong> (Unified Extensible<br>Firmware Interface) o Interfaz de Firmware Extensible Unificada, cuya finalidad<br>es la misma pero añade mejoras y funciones a la antigua BIOS.</p>
+</aside>
+<aside class="special"><p>Las mayores diferencias entre ambas son una interfaz más moderna y actualizada<br>frente al diseño MS-DOS de la BIOS de siempre.</p>
+</aside>
+<p>Las mejoras más destacadas son las siguientes:</p>
+<ul>
+<li>Interfaz mas moderna y mejorada, incluso puede usarse ratón en algunas versiones.</li>
+<li>Carga más rapida del sistema.</li>
+<li>Compatibilidad de sistema de archivos GPT.</li>
+<li>Mejor y mayor seguridad durante el inicico del ordenador.</li>
+<li>Compatibilidad nativa con sistemas con procesadores de 64 bits.</li>
+</ul>
+<p>Esta guia se va a centrar en las diferentes medidas y opciones de seguridad que disponemos:</p>
+<ul>
+<li><strong>Opciones de Seguridad.</strong></li>
+<li>Contraseña de Administrador.</li>
+<li>Contraseña de Power-On.</li>
+<li>TPM.</li>
+<li>Restaurar valores de Fábrica.</li>
+</ul>
+<p class="image-container"><img alt="Menu de Seguridad" src="img\c97d7059aa59ecf8.png"></p>
+<ul>
+<li><strong>Opciones de Arranque.</strong></li>
+<li>POST Hotkey Delay (Sec)</li>
+<li>USB Boot.</li>
+<li>Secure Boot.</li>
+<li>Network Boot.</li>
+</ul>
+<p class="image-container"><img alt="Menú de Arranque" src="img\1520f67c6910b90a.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Contraseña de Administrador" duration="2">
+        <p>Esta opción previene del acceso no autorizado a la BIOS.</p>
+<p class="image-container"><img alt="Introduce la contraseña de Administrador" src="img\b752857434cd6415.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Contraseña de Power ON" duration="2">
+        <p>Esta opción previene del acceso no autorizado al arranque del sistema.</p>
+<p class="image-container"><img alt="Introduce la contraseña de Power-On" src="img\e3586f728ea6fc09.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="TPM." duration="4">
+        <p><strong>TPM</strong> o <strong>Trusted Plataform Module</strong> (Tecnología de módulo de plataforma segura), es un procesador de criptografia seguro, que incluye varios mecanismos de seguridad que hacen que, aunque haya malware o virus en el equipo no supongan ningún riesgo ni alteraciones en el mismo.</p>
+<p>Existen varias opciones:</p>
+<ol type="1">
+<li><strong>TPM Device:</strong></li>
+</ol>
+<ul>
+<li>Oculto.</li>
+<li>Disponible.</li>
+</ul>
+<p>Si se dispone en Oculto, el dispositivo TPM no será visible para el Sistema Operativo.</p>
+<p class="image-container"><img alt="Dispositivo TPM" src="img\d1ed21e661867ee4.png"></p>
+<ol type="1">
+<li><strong>TPM Estate:</strong></li>
+</ol>
+<ul>
+<li>Activado.</li>
+<li>Desactivado.</li>
+</ul>
+<p>Si la configuración del dispositivo TPM se establecide en Oculto, la BIOS oculta este elemento.</p>
+<p class="image-container"><img alt="Dispositivo TPM" src="img\295cfa391cd443c9.png"></p>
+<ol type="1">
+<li><strong>Clear TPM.</strong></li>
+</ol>
+<ul>
+<li>Si.</li>
+<li>No.</li>
+</ul>
+<p>Esta opción nos permite borrar claves y datos protegidos por el TPM.</p>
+<p class="image-container"><img alt="Dispositivo TPM" src="img\7612b729accede9a.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Restaurar valores de Fábrica" duration="0">
+        <p>Esta opción restaurará todas las configuraciones de seguridad a los valores predeterminados de fábrica.</p>
+<p class="image-container"><img alt="Restaurar valores de fábrica" src="img\6ecf9e763d114c24.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Post Hotkey Delay (Sec)." duration="2">
+        <p><strong>POST</strong> o <strong>Power On Self Test</strong> es es una serie de procesos y comprobaciones del sistema que ejecuta una ordenador y sus dispositivos electrónicos cada vez que se enciende o se reinicia.</p>
+<p>Esta serie de procesos se basan en escaneos que verifican el hardware y aseguran que tanto el procesador como la RAM y los principales dispositivos como la placa base y el almacenamiento están correctamente y han sido iniciados sin problemas.</p>
+<p>El POST Hotkey Delay controla la cantidad de tiempo que se da para presionar la tecla de función para ingresar a las utilidades de configuración cuando se inicia el sistema.<br>Para deshabilitar la solicitud audible (pitidos) tanto para la contraseña del administrador como para la contraseña de arranque, seleccione la opción en 0.</p>
+<p class="image-container"><img alt="POST" src="img\b93f24d1565a2f91.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="USB Boot" duration="2">
+        <p>Esta opción activa o desactiva la posibilidad de arrancar el sistema desde un USB externo.</p>
+<p class="image-container"><img alt="USB Boot" src="img\8b469e97eb69e043.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Secure Boot" duration="2">
+        <p>Es un modo para UEFI que trae Windows desde Windows 8, y que impide la ejecución de cualquier software no firmado o certificado en el arranque del sistema. Con ello se intenta evitar la carga de malware o aplicaciones que no sean de fiar cuando inicias el ordenador.</p>
+<p>Esta opción permite activar o desactivar el arranque seguro de la BIOS.</p>
+<p class="image-container"><img alt="Secure Boot" src="img\9d778a5f62502e40.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Network Boot" duration="2">
+        <p>Es un proceso que permite que una ordenador inicie y cargue un sistema operativo u otro programa directamente desde la red sin ningún dispositivo de almacenamiento conectado localmente, como un disquete, un CD-ROM, una memoria USB. o disco duro.</p>
+<p>Esta opcion no spermite habilitar o desactivar esta funcion a la vez que protocolo de red utilizaremos.</p>
+<p class="image-container"><img alt="Network Boot" src="img\22fc21bf82583a.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Menu de salida" duration="0">
+        <p>Una vez realizados los cambios en la sopciones de la BIOS, tendremos tres opciones:</p>
+<ul>
+<li>Guardar los cambios y salir.</li>
+</ul>
+<p class="image-container"><img alt="Guardar y salir" src="img\7230861cefac4e78.png"></p>
+<ul>
+<li>Ignorar los cambios y salir.</li>
+</ul>
+<p class="image-container"><img alt="Ignorar y salir" src="img\383a831c30a48b59.png"></p>
+<ul>
+<li>Cargar las opciones predeterminadas.</li>
+</ul>
+<p class="image-container"><img alt="Cargar opciones predeterminadas" src="img\bc69d7a53d8ca939.png"></p>
+<p>En todas ellas el equipo se reiniciará.</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+
+</body>
+</html>
